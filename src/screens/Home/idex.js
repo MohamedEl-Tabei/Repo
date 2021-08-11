@@ -1,10 +1,11 @@
+import { useNavigation, useRoute } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { FlatList, ActivityIndicator } from "react-native";
 import { RepoHeader, RepoCard } from "../../components";
 import { getAllRepos } from "../../services";
 import styles from "./styles";
 
-function Home() {
+function Home({ navigation, route }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -30,6 +31,11 @@ function Home() {
         providerName={data.item.owner.login}
         starsNumber={data.item.stargazers_count}
         numberOfLines={1}
+        onPress={() =>
+          navigation.navigate("Repo", {
+            data: data.item,
+          })
+        }
       />
     );
   };

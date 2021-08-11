@@ -6,7 +6,10 @@ import logo from "../../../assets/logo.png";
 function RepoHeader({ imageSrc, text, containerStyle, imageStyle, textStyle }) {
   return (
     <View style={[styles.container, containerStyle]}>
-      <Image source={logo} style={styles.image} />
+      <Image
+        source={imageSrc ? { uri: imageSrc } : logo}
+        style={styles.image}
+      />
       <Text style={[styles.text, textStyle]}>{text}</Text>
     </View>
   );

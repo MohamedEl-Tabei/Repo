@@ -12,17 +12,18 @@ function RepoCard({
   starsNumber,
   providerName,
   numberOfLines,
+  onPress,
 }) {
   return (
-    <Pressable style={styles.container}>
+    <Pressable style={styles.container} onPress={onPress}>
       <View style={styles.contentContainer}>
         <Image source={{ uri: imageSrc }} style={styles.image} />
         <View style={styles.rightView}>
           <Text style={styles.title} numberOfLines={1}>
-            {limitTextLength(19, title)}
+            {limitTextLength(22, title)}
           </Text>
           <Text style={styles.desc} numberOfLines={numberOfLines}>
-            {limitTextLength(38, description)}
+            {limitTextLength(25, description)}
           </Text>
         </View>
       </View>
