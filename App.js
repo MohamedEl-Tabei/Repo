@@ -1,13 +1,12 @@
 import React from "react";
-import { SafeAreaView,Text } from "react-native";
+import { StatusBar } from "react-native";
+import Home from './src/screens/Home/idex';
+
 export default function App() {
   return (
-    <SafeAreaView
-      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-    >
-      <Text>
-          {"Hello"}
-      </Text>
-    </SafeAreaView>
+    <>
+      <StatusBar barStyle={"light-content"} />
+      <Home />
+    </>
   );
 }
